@@ -9,7 +9,7 @@
 -->  
 
 
-<Package name="IPsec"
+<Package name="Authentication Protocols"
   xmlns="https://niap-ccevs.org/cc/v1"
   xmlns:sec="https://niap-ccevs.org/cc/v1/section"
   xmlns:h="http://www.w3.org/1999/xhtml">
@@ -20,10 +20,10 @@
 
   <PPReference>
    <ReferenceTable>
-      <PPTitle>Functional Package for IPsec 'n Friends</PPTitle>
+      <PPTitle>Functional Package for Authentication Protocols</PPTitle>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2022-01-06</PPPubDate>
+      <PPPubDate>2022-01-20</PPPubDate>
       <Keywords>IPsec; Internet Protocol</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -31,7 +31,7 @@
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2022-01-06</date>
+      <date>2022-01-20</date>
       <subject>Start of first draft.</subject>
     </entry>
   </RevisionHistory>
