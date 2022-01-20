@@ -10,8 +10,8 @@ Functional Package for Authentication Protocols
 
 ## Draft Version
 
-* [Functional Package for IPsec](https://commoncriteria.github.io/pp/authpro/authpro-release.html) (html)
-* [Functional Package for IPsec](https://commoncriteria.github.io/pp/authpro/authpro-release.pdf) (pdf)
+* [Functional Package for Authentication Protocols](https://commoncriteria.github.io/pp/authpro/authpro-release.html) (html)
+* [Functional Package for Authentication Protocols](https://commoncriteria.github.io/pp/authpro/authpro-release.pdf) (pdf)
 
 ## Release Version
 Currently, there is no release version.
