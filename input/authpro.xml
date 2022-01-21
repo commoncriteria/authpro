@@ -359,7 +359,7 @@
 
 			<!-- This element does not belong here. It is an IKE requirement, and so it should
 				be in the IPsec package. -->
-			<f-element id="fcs-eap-ext-1e5">
+<!--			<f-element id="fcs-eap-ext-1e5">
 				<title>The TSF shall use the MSK from the 
 					<selectables>
 						<selectable>EAP-TLS</selectable>
@@ -413,7 +413,7 @@
 						</testlist>
 					</Tests>
 				</aactivity>
-			</f-element>    
+			</f-element>    -->
 			<audit-event/>
         </f-component>	
 		
