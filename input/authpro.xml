@@ -597,7 +597,7 @@
 						<selectable id="sel-psk-genhotp">Combination of a generated bit-based and HMAC-based one-time password</selectable>
 						<selectable id="sel-psk-gentotp">Combination of a generated bit-based and time-based one-time password</selectable>
 						<selectable id="sel-psk-pwhotp">Combination of a password-based and HMAC-based one-time password</selectable>
-						<selectable id="sel=psk-pwtotp">Combination of a password-based and time-based one-time password</selectable>
+						<selectable id="sel-psk-pwtotp">Combination of a password-based and time-based one-time password</selectable>
 					</selectables> keys.
 				</title>
 				<note role="application">
@@ -1089,7 +1089,7 @@
         
 		<!-- FIA_X509_EXT.1 -->
         <f-component id="sfr-fia-x509-ext-1" cc-id="fia_x509_ext.1" name="X.509 Certificate Validation">
-<!--			<f-element id="fel-certauth-how"> -->
+			<f-element id="fel-certauth-how">
 				<title>
 					The application shall 
 					<selectables onlyone="yes">
