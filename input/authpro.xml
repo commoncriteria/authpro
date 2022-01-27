@@ -337,7 +337,7 @@
 					exchange using the RBG specified in FCS_RBG_EXT.1.
 				</title>
 			</f-element>
-			<f-element id="fcs-eap-ext-1e3">
+			<f-element id="fcs-eap-ext-1e3">   <!-- This element appears to be IPsec specific. Is it? -->
 				<title>The TSF shall support peer authentication using certificates and
 					<selectables>
 						<selectable>PSK</selectable>
@@ -575,11 +575,10 @@
 					</selectables> keys.
 				</title>
 				<note role="application">
-					If any selection including "<h:i>generated bit-based</h:i>" keys is selected, then FIA_PSK_EXT.2 must be claimed.<h:p/>
-					If any selection including "<h:i>password-based</h:i>" keys is selected then FIA_PSK_EXT.3 must be claimed. <h:p/>
+					If any selection including "<h:i>Generated bit-based</h:i>" keys is selected, then FIA_PSK_EXT.2 must be claimed.<h:p/>
+					If any selection including "<h:i>Password-based</h:i>" keys is selected then FIA_PSK_EXT.3 must be claimed. <h:p/>
 					If any selection including "<h:i>HMAC-based one-time password</h:i>" keys is selected then FIA_PSK_EXT.4 must be claimed.<h:p/> 
-					If any selection including "<h:i>time-based one-time password</h:i>" is selected then FIA_PSK_EXT.5 must be claimed.<h:p/> 
-					This requirement must be claimed if "<h:i>Pre-shared keys</h:i>" is selected in FCS_IPSEC_EXT.1.11.
+					If any selection including "<h:i>Time-based one-time password</h:i>" is selected then FIA_PSK_EXT.5 must be claimed.<h:p/> 
 				</note>
 				<aactivity>
 					<TSS>
@@ -659,8 +658,8 @@
 			<depends on-sel="sel-psk-pwtotp"/>
 			<f-element id="fia-psk-ext-3e1">
 				<title>
-					The TSF shall support a PSK of up to <assignable>positive integer of 64 or more</assignable> 
-					characters. 
+					The TSF shall support a derivation of PSKs from passwords of up to 
+					<assignable>positive integer of 64 or more</assignable> characters. 
 				</title>
 				<note role="application">
 					The ST author assigns the maximum size of the PSK it supports; it must support at least 
@@ -668,7 +667,7 @@
 				</note>
 			</f-element>
 			<f-element id="fia-psk-ext-3e2">
-				<title>The TSF shall allow PSKs to be composed of any combination of upper case characters, 
+				<title>The TSF shall allow passwords for deriving PSKs to be composed of any combination of upper case characters, 
 					lower case characters, numbers, and the following special characters: 
 					"!", "@", "#", "$", "%", "^", "&amp;", "*", "(", and ")", and 
 					<selectables>
@@ -702,16 +701,16 @@
 				</note>
 			</f-element>
 			<f-element id="fia-psk-ext-3e4">
-				<title>The TSF shall not accept PSKs less than 
+				<title>The TSF shall not accept passwords for deriving PSKs of length less than 
 					<selectables>
 						<selectable>a value settable by the administrator</selectable>
-						<selectable><assignable>minimum PSK length accepted by the TOE, must be >= 6</assignable></selectable>
-					</selectables> and greater than the maximum PSK length defined in FIA_PSK_EXT.3.1.
+						<selectable><assignable>a minimum password length accepted by the TOE (must be >= 6)</assignable></selectable>
+					</selectables> and greater than the maximum password length defined in FIA_PSK_EXT.3.1.
 				</title>
 				<note role="application">
 					If the minimum length is settable, then ST author chooses "<h:i>a value settable by the administrator</h:i>".
 					If the minimum length is not settable, the ST author fills in the assignment with the minimum 
-					length the PSK must be. This requirement is to ensure bounds work properly.
+					length the password must be. This requirement is to ensure bounds work properly.
 				</note>
 			</f-element>
 			<f-element id="fia-psk-ext-3e5">
@@ -720,9 +719,9 @@
 					to the key size selected for PBKDF in FIA_PSK_EXT.3.3.
 				</title>
 			</f-element>
-			<f-element id="fia-psk-ext-3e6">
+			<f-element id="fia-psk-ext-3e6">   <!-- this doesn't beliong here -->
 				<title>
-					The TSF shall require the PSK to be entered before every initiated connection.
+					The TSF shall require that the password be entered before every initiated connection.
 				</title>
 			</f-element>   
             <f-element id="fia-psk-ext-3e7">
@@ -805,17 +804,13 @@
 
         
 		<!-- FIA_PSK_EXT.4 HMAC-based One-Time Password Pre-Shared Keys Support -->
+		<!-- This is not about the composition of the PSK, so it probably doesn't belong in PSK. -->
         <f-component cc-id="fia_psk_ext.4" id="sfr-fia-psk-ext-4" 
 			name="HMAC-Based One-Time Password Pre-shared Keys Support" status="sel-based">
 			<depends on-sel="sel-psk-hotp"/>
 			<depends on-sel="sel-psk-genhotp"/>
 			<depends on-sel="sel-psk-pwhotp"/>
 			<f-element id="fia-psk-ext-4e1">
-				<title>
-					The TSF shall accept and send a HOTP while initiating an IPsec connection.
-				</title>
-			</f-element>
-			<f-element id="fia-psk-ext-4e2">
 				<title> The TSF shall 
 					<selectables onlyone="yes">
 						<selectable>verify the HOTP</selectable>
@@ -860,12 +855,9 @@
 			<depends on-sel="sel-psk-gentotp"/>
 			<depends on-sel="sel-psk-pwtotp"/>
 			<f-element id="fia-psk-ext-5e1">
-				<title>The TSF shall accept and send a TOTP while initiating an IPsec connection.</title>
-			</f-element>
-			<f-element id="fia-psk-ext-5e2">
 				<title>The TSF shall 
 					<selectables onlyone="yes">
-						<selectable id="sel-psk5-ext-e2-verify">verify the TOTP</selectable>
+						<selectable id="sel-psk5-ext-e1-verify">verify the TOTP</selectable>
 						<selectable>verify the TOTP via an external authentication server</selectable>
 					</selectables> before establishing an incoming connection.
 				</title>
